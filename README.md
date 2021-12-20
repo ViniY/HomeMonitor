@@ -23,8 +23,8 @@ Actually many things to do during this break RL, CSS, C, Raspberry, unity and ga
 
 
 ## 功能 ：
-    - 温度 & 湿度 ： 
-        - 使用原件：DHT11
-    - 气体检测
-        - 使用原件 ：MQ5
+- 温度 & 湿度 ： 
+    - 使用原件：DHT11
+- 气体检测
+    - 使用原件 ：MQ5
         
