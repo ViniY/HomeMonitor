@@ -27,4 +27,5 @@ Actually many things to do during this break RL, CSS, C, Raspberry, unity and ga
     - 使用原件：DHT11
 - 气体检测
     - 使用原件 ：MQ5
-        
+- 声音监测：
+    - 使用原件 ：LM386
