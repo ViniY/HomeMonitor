@@ -15,4 +15,6 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
 
 <h3> xmath plans: </h3>
 Actually many things to do during this break RL, CSS, C, Raspberry, unity and games of course. dmn
-![Pin layout](https://github.com/ViniY/HomeMonitor/blob/main/raspberry_pi_pico_pinout.png?raw=true)
+<p>
+    <img src="raspberry_pi_pico_pinout.png" width="220" height="240" />
+</p>
