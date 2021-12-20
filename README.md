@@ -6,7 +6,7 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
 准备树莓派搞一搞， 弄个家庭各种数据的监控
 
 菜鸡没玩过 看别人做的很好玩， 所以准备自己写一个。
-目前不知道python还是c 
+目前不知道python还是c
 玩玩看吧
 总之很期待
 
@@ -14,4 +14,5 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
 
 
 <h3> xmath plans: </h3>
-Actually many things to do during this break RL, CSS, C, Raspberry, unity and games of course. dmn 
+Actually many things to do during this break RL, CSS, C, Raspberry, unity and games of course. dmn
+![Pin Layout of Raspberry pi pico](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2021/01/raspberry_pi_pico_pinout.png)
