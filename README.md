@@ -20,3 +20,11 @@ Actually many things to do during this break RL, CSS, C, Raspberry, unity and ga
     </div>    
     <img src="raspberry_pi_pico_pinout.png" width="700" height="620" />
 </p>
+
+
+<div> 
+    <h2>功能 : </h2>
+        
+        
+</div>
+    
