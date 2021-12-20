@@ -18,5 +18,5 @@ Actually many things to do during this break RL, CSS, C, Raspberry, unity and ga
 <p>
     <div>  Pins Layout for Raspberry Pi Pico
     </div>    
-    <img src="raspberry_pi_pico_pinout.png" width="300" height="320" />
+    <img src="raspberry_pi_pico_pinout.png" width="600" height="620" />
 </p>
