@@ -11,6 +11,8 @@ from discord.ext import commands,tasks
 import os
 from dotenv import load_dotenv
 import youtube_dl
+import re
+
 
 client = discord.Client()
 # intents = discord.Intents().all()
@@ -29,9 +31,18 @@ def time_now():
 
 
 def weatherToday(msg_in):
+  insensitive_weather = re.compile(re.escape('weather'), re.IGNORECASE)
+  msg_in = insensitive_weather.sub('', msg_in)
+  msg_array = msg_in.split()
+  msg_in_ = ""
+  for ms in msg_array:
+    msg_in_ += ms.title()
+    msg_in_ += " "
+  msg_in = msg_in_
+
   city_name = GeoText(msg_in).cities
   city_name = city_name[0]
-
+    
   base_url = "http://api.openweathermap.org/data/2.5/weather?"
   complete_url = base_url + "appid=" +'d850f7f52bf19300a9eb4b0aa6b80f0d' + "&q=" + city_name
 
@@ -54,6 +65,7 @@ def weatherToday(msg_in):
   weather.append(current_temperature)
   weather.append(windSpeed)
   weather.append(h)
+  weather.append(city_name)
   return weather
 
 def addBobi(msg):
@@ -83,10 +95,15 @@ def delete_encouragment(index):
     db["encouragements"] = encouragements
 
 def zanghuabobi(duixiang):
+  # print(text_bobi)
   index = random.randint(0,len(text_bobi)-1)
   words = text_bobi[index]
   return words
 #=========================================Music=======================
+
+def playMusic(url):
+  return true
+
 
 # @client.command(pass_context=True)
 # async def yt(ctx, url):
@@ -113,11 +130,13 @@ async def on_message(message):
   
   msg = message.content
 
-  if "time" in msg and "now" in msg:
-    timeNow = time_now()
-    await message.channel.send(timeNow)
+  if ("time" in msg or "Time" in msg):
+    msg_ = msg.lower()
+    if "now" in msg_:
+      timeNow = time_now()
+      await message.channel.send(timeNow)
   
-  if "weather" or "Weather" in msg:
+  if ("weather"  in msg) or ("Weather" in msg):
     weatherReport = weatherToday(msg)
     # await message.channel.send(weatherReport)
 
@@ -125,7 +144,8 @@ async def on_message(message):
     tempreture = weatherReport[1]
     wind = weatherReport[2]
     humidity = weatherReport[3]
-    await message.channel.send("The weather today is " + weather
+    cityName = weatherReport[4]
+    await message.channel.send("The weather today in " + cityName + " is " + weather
     + " the tempreture now is " + str(tempreture) + " and the wind is " + str(wind) + "m/s and the humidity is " + str(humidity))
   if "喷他" in msg:
     for i in range(5):
@@ -136,7 +156,8 @@ async def on_message(message):
     returned = addBobi(msg)
     await message.channel.send(returned)
 
-  # if "$play"
+  if "$play" in msg: # fecth the url from the user input
+    playing = playMusic("") 
 
 
 my_secret = os.environ['dcrobotJarv1s']
