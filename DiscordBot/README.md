@@ -2,9 +2,8 @@
 
 
 <h3> A Simple Discord bot: </h3>
-I found dc bot is quite interesting recently, and I can actually customize a bot do what I want it to.<br ?>
-<<<<<<< HEAD
-So her is a new folder for it. This project can be also related to my HomeMonitor project, since the semanic analysis and feature selection for the NLP part gonna be extremly useful to let the monitor understand the users' commands.
+I found dc bot is quite interesting recently, and I can actually customize a bot do what I want it to.<br />
+So here is a new folder for it. This project can be also related to my HomeMonitor project, since the semanic analysis and feature selection for the NLP part gonna be extremly useful to let the monitor understand the users' commands.
 
 ## Objective
 The bot donot have all the permission to manage the channel etc. so it only can reply to the users with specific commands. So, ideally it gonna be a chatting bot.
@@ -21,7 +20,6 @@ The bot donot have all the permission to manage the channel etc. so it only can 
     - shi yong ge lei yin yang guai qi de hua yu tiao dou users
     - tong yang ke yi zi ding yi
     - tong yang lian jie database
-=======
 So her is a new folder for it. This project can be also related to my HomeMonitor project, since the semanic analysis and feature selection for the NLP part gonna be extremly useful to let the monitor understand the users' commands. 
 
 ## Objective 
@@ -39,20 +37,12 @@ The bot donot have all the permission to manage the channel etc. so it only can 
     - shi yong ge lei yin yang guai qi de hua yu tiao dou users
     - tong yang ke yi zi ding yi 
     - tong yang lian jie database 
->>>>>>> 2116a66ccea358bc1d8016ee14172629d4110e2e
 - yin yang guai qi jin jie ban:
     - li yong ge da yin pin lai chao feng users
     - zi ding yi yin pin
 - Music player
-<<<<<<< HEAD
     - play the music by the url user sent in the chat.
 
 ## Later goal
 The bot should be able to understand the words users sent, not only recognize the commands but can understand what we want it to do.
-=======
-    - play the music by the url user sent in the chat.  
 
-## Later goal
-The bot should be able to understand the words users sent, not only recognize the commands but can understand what we want it to do. 
-
->>>>>>> 2116a66ccea358bc1d8016ee14172629d4110e2e
