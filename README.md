@@ -13,9 +13,7 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
 后续有可能写一个智能识别的小车 用来放牧我的🐱
 
 
-<h3> xmath plans: </h3>
-Actually many things to do during this break RL, CSS, C, Raspberry, unity and games of course. dmn
-<p>
+
     <div>  Pins Layout for Raspberry Pi Pico
     </div>    
     <img src="raspberry_pi_pico_pinout.png" width="700" height="620" />
