@@ -14,9 +14,9 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
 
 
 
-    <div>  Pins Layout for Raspberry Pi Pico
-    </div>    
-    <img src="raspberry_pi_pico_pinout.png" width="700" height="620" />
+<div>  Pins Layout for Raspberry Pi Pico
+</div>    
+<img src="raspberry_pi_pico_pinout.png" width="700" height="620" />
 </p>
 
 
