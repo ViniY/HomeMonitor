@@ -132,8 +132,10 @@ tones = {
     'B9':15804
 }
 
+#Time, Note, Duration, Instrument (onlinesequencer.net schematic format)
+#0 D4 8 0;0 D5 8 0;0 G4 8 0;8 C5 2 0;10 B4 2 0;12 G4 2 0;14 F4 1 0;15 G4 17 0;16 D4 8 0;24 C4 8 0
 class music:
-    def __init__(self, songString = '0 D4 8 0' , looping = True, tempo = 3, duty 2512, pin = None, pins =[Pin(0)]):
+    def __init__(self, songString='0 D4 8 0', looping=True, tempo=3, duty=2512, pin=None, pins=[Pin(0)]):
         self.tempo = tempo
         self.song = songString
         self.looping = looping
@@ -149,11 +151,9 @@ class music:
         
         if (not (pin is None)):
             pins = [pin]
-            
-        i = 0
+        self.pins = pins
         for pin in pins:
-            self.pwms.append(PWM(pins[i]))
-            i = i + 1
+            self.pwms.append(PWM(pin))
         
         self.notes = []
 
@@ -191,7 +191,23 @@ class music:
         for pwm in self.pwms:
             pwm.deinit()
         self.stopped = True
-        
+
+    def restart(self):
+        self.beat = -1
+        self.timer = 0
+        self.stop()
+        self.pwms = []
+        for pin in self.pins:
+            self.pwms.append(PWM(pin))
+        self.stopped = False
+
+    def resume(self):
+        self.stop()
+        self.pwms = []
+        for pin in self.pins:
+            self.pwms.append(PWM(pin))
+        self.stopped = False
+
     def tick(self):
         if (not self.stopped):
             self.timer = self.timer + 1
@@ -259,6 +275,3 @@ class music:
             return True
         else:
             return False
-        
-
-       
