@@ -2,40 +2,47 @@ import cv2
 import sys
 
 
-cascPath = sys.argv[1]
-faceCascade = cv2.CascadeClassifier(cascPath)
+class Face_detector():
+    def __init__(self):
+        self.name = ""
+        self.age = 0
+        self.livingInThisHome = False
 
-video_capture = cv2.VideoCapture(0)
+    def face_detector_init(self):
+        cascPath = sys.argv[1]
+        faceCascade = cv2.CascadeClassifier(cascPath)
 
-while True:
-    # Capture frame-by-frame
-    ret, frame = video_capture.read()
+        video_capture = cv2.VideoCapture(0)
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        while True:
+            # Capture frame-by-frame
+            ret, frame = video_capture.read()
 
-    faces = faceCascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
-        minSize=(30, 30),
-        flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-    )
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    # Draw a rectangle around the faces
-    for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            faces = faceCascade.detectMultiScale(
+                gray,
+                scaleFactor=1.1,
+                minNeighbors=5,
+                minSize=(30, 30),
+                flags=cv2.cv.CV_HAAR_SCALE_IMAGE
+            )
 
-    # Display the resulting frame
-    cv2.imshow('Video', frame)
+            # Draw a rectangle around the faces
+            for (x, y, w, h) in faces:
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+            # Display the resulting frame
+            cv2.imshow('Video', frame)
 
-# When everything is done, release the capture
-video_capture.release()
-cv2.destroyAllWindows()
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
-
+        # When everything is done, release the capture
+        video_capture.release()
+        cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
+    fd = Face_detector()
+    fd.face_detector_init()
