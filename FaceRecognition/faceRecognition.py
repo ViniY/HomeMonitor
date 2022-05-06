@@ -1,48 +1,73 @@
 import cv2
 import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+from PIL import Image
+
+"""This file is only for testing, 
+In this program we are building  face detection 
+and recognition using opencv
+"""
+
+"""
+Locally testing the acc
+"""
 
 
-class Face_detector():
-    def __init__(self):
-        self.name = ""
-        self.age = 0
-        self.livingInThisHome = False
+def read_images(path):
+    imgs = []
+    for f in os.listdir(path):
+        if "DS_Store" in f:
+            continue
+        imgs.append(cv2.imread(os.path.join(path, f)))
+    return imgs
 
-    def face_detector_init(self):
-        cascPath = sys.argv[1]
-        faceCascade = cv2.CascadeClassifier(cascPath)
 
-        video_capture = cv2.VideoCapture(0)
+def color_grey(imgs):
+    imgs_grey = []
+    for img in imgs:
+        grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        imgs_grey.append(grayscale)
+    return imgs_grey
 
-        while True:
-            # Capture frame-by-frame
-            ret, frame = video_capture.read()
 
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+def convertToRGB(img):
+    return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-            faces = faceCascade.detectMultiScale(
-                gray,
-                scaleFactor=1.1,
-                minNeighbors=5,
-                minSize=(30, 30),
-                flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-            )
 
-            # Draw a rectangle around the faces
-            for (x, y, w, h) in faces:
-                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+def detect_faces(f_cascade, colored_img, scaleFactor=1.1):
+    img_copy = np.copy(colored_img)
+    # convert the test image to gray image as opencv face detector expects gray images
+    gray = cv2.cvtColor(img_copy, cv2.COLOR_BGR2GRAY)
 
-            # Display the resulting frame
-            cv2.imshow('Video', frame)
+    # let's detect multiscale (some images may be closer to camera than others) images
+    faces = f_cascade.detectMultiScale(gray, scaleFactor=scaleFactor, minNeighbors=5);
 
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+    # go over list of faces and draw them as rectangles on original colored img
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img_copy, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-        # When everything is done, release the capture
-        video_capture.release()
-        cv2.destroyAllWindows()
+    return img_copy
 
 
 if __name__ == '__main__':
-    fd = Face_detector()
-    fd.face_detector_init()
+    path = "./faceDetectionDataset"
+    # load cascade classifier training file for haarcascade
+
+    haar_face_cascade = cv2.CascadeClassifier('data/lbpcascade_frontalface.xml')
+    imgs = read_images(path)
+    imgs_grey = color_grey(imgs)
+    """simply plot the gray scale image"""
+    # cv2.imshow("000", imgs_grey[0])
+    # cv2.waitKey(0)
+    # call our function to detect faces
+    test2 = cv2.imread('/Users/vini/Desktop/HomeMonitor/FaceRecognition/faceDetectionDataset/img_15.jpg')
+    faces_detected_img = detect_faces(haar_face_cascade,test2)
+
+    # convert image to RGB and show image
+    plt.imshow(convertToRGB(faces_detected_img))
+
+
+
+
