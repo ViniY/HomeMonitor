@@ -18,3 +18,4 @@ def recognizedText_(text):
             funcs.weatherReport("Wellington")
     else:
         print("Currently I dont have that functionality")
+
