@@ -36,3 +36,11 @@ due to 今年lockdown 了， 所以很sad 不能出去玩。
     - 使用原件 ：MQ5
 - 声音监测：
     - 使用原件 ：LM386
+
+Now having more ideas for the aspect of home security. In this project, it will also monitoring the front door, it will be able to check if the comming person is living here or not. If not, then it will predict the height and weight of the person and store this info with the face of the comming person into the database. 
+And when the ppl leaving the house, it will automatically remove the info of this person. The time phase of deletetion is customizable, by default it will be three days. 
+
+The audio detector will also capture the voice of ppl, it should be able to detect different languages, and analyze the frequency for different person which could also be used to help verify different person. 
+
+
+
