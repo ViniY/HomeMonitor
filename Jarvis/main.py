@@ -5,7 +5,7 @@ import text_speechEngine as speech
 from geopy.geocoders import Nominatim
 from Jarvis import CommandControl
 import voiceRecognition as vr
-
+import os
 '''
 This project is aiming to be a home monitor with voice control
 
@@ -42,8 +42,7 @@ RECONIZEDTEXT = ""
 
 # TODO The welcome song need to be conclude in the package
 def welcome():
-    playsound('S:\\Jarvais\SoundTracks\JarvisStartUp.mp3')
-
+    playsound("../resource/tones/JARVIS_Wellcome.mp3")
 
 def getLocation():
     # calling the Nominatim tool
@@ -58,8 +57,8 @@ def getLocation():
 
 
 def greetings():
-    timeNow = datetime.datetime.now()
-    hour = timeNow.hour
+    time_Now = datetime.datetime.now()
+    hour = time_Now.hour
     dayTime = ""
     if 5 < hour <= 12:
         dayTime = "Good Morning "
