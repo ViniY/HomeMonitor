@@ -3,7 +3,7 @@
     But currently we donnt have Text segmentation on it and also blablabla
     so we basically using the most stupid way currently
 """
-import functionalityPack as funcs
+import utils as funcs
 from geotext import GeoText
 
 
