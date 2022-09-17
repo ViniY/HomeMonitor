@@ -10,11 +10,9 @@ This project is aiming to be a home monitor with voice control
     Weather check
     Text to Speech
 # TODO: 
-    0. Build a virtual Env and sort out all the libraries (on going) (22/5/2022)
-    1. Connect the project with Mi Products using Access Token  (Done)
-    2. Semantic Analysis (To get ric off stupid key word detection) (22/5/2022)
+    2. Semantic Analysis (To get rid off stupid key word detection) 
     3. Classify the text into tasks or just random talk (two weeks)
-    4. Build the Sensors for Temperature, Moisture, Sound, Light intensity (done by July)
+    4. Build the Sensors for Temperature, Moisture, Sound, Light intensity
     5. Read info from surrounding env (...)
     6. Data Processing for the surrounding env data 
     7. Build House Model (IDK what to do with it but just list here first )
