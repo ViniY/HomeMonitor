@@ -19,7 +19,7 @@ class PeopleAtHome():
         self.numPpl = 0
         self.leftTime = {}
         self.backTime = {}
-        self.path = "./peopleInTheHouse"
+        self.path = "peopleInTheHouse"
         self.read_ppl()
 
     def read_ppl(self):
