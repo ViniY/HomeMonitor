@@ -30,10 +30,12 @@ def listen():
 
 
 def welcome():
-    playsound("../resource/tones/JARVIS_Wellcome.mp3")
+    playsound("/home/devbox/HomeMonitor/resource/tones/JARVIS_Wellcome.mp3")
 
 
-def get_location(city="Wellington"): # if not specific the city then it will be WEllington
+def get_location(
+    city="Wellington",
+):  # if not specific the city then it will be WEllington
     # calling the Nominatim tool
     loc = Nominatim(user_agent="GetLoc")
     # entering the location name
@@ -43,4 +45,3 @@ def get_location(city="Wellington"): # if not specific the city then it will be 
     # printing latitude and longitude
     print("Latitude = ", getLoc.latitude, "\n")
     print("Longitude = ", getLoc.longitude)
-

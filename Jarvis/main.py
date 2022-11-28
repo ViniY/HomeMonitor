@@ -1,8 +1,7 @@
-
 from Jarvis.utils.BaseFunctionality import greetings, welcome, get_location
 from gui.gui import create_gui
 
-'''
+"""
 This project is aiming to be a home monitor with voice control
 
 # Currently available: 
@@ -28,14 +27,14 @@ This project is aiming to be a home monitor with voice control
         c. Analysis the voice frequency of the users (To know who is controlling, better access control)
     More can be added later on 
           
-'''
+"""
 
-city = 'Wellington'
-country = 'nz'
+city = "Wellington"
+country = "nz"
 RECONIZEDTEXT = ""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     welcome()
-    greetings()
-    create_gui()
+    # greetings()
+    # create_gui()
