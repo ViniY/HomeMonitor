@@ -36,5 +36,5 @@ RECONIZEDTEXT = ""
 
 if __name__ == "__main__":
     welcome()
-    # greetings()
-    # create_gui()
+    greetings()
+    create_gui()
