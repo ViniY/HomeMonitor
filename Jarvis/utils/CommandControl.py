@@ -18,3 +18,4 @@ def recognized_text(text):
             weather_report("Wellington")
     else:
         print("Currently I dont have that functionality")
+
