@@ -52,22 +52,22 @@ def detect_faces(f_cascade, colored_img, scaleFactor=1.1):
 
 
 if __name__ == '__main__':
-    path = "./faceDetectionDataset"
+    path = "faceDetectionDataset"
     # load cascade classifier training file for haarcascade
 
-    haar_face_cascade = cv2.CascadeClassifier('data/lbpcascade_frontalface.xml')
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     imgs = read_images(path)
     imgs_grey = color_grey(imgs)
     """simply plot the gray scale image"""
     # cv2.imshow("000", imgs_grey[0])
     # cv2.waitKey(0)
     # call our function to detect faces
-    test2 = cv2.imread('/Users/vini/Desktop/HomeMonitor/FaceRecognition/faceDetectionDataset/img_15.jpg')
-    faces_detected_img = detect_faces(haar_face_cascade,test2)
+    test2 = cv2.imread('../../Jarvis/FaceRecognition/faceDetectionDataset/img_500.jpg')
+    faces_detected_img = detect_faces(face_cascade, test2)
 
     # convert image to RGB and show image
     plt.imshow(convertToRGB(faces_detected_img))
-
+    plt.show()
 
 
 

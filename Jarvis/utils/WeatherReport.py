@@ -1,19 +1,12 @@
-from playsound import playsound
 import requests
-import text_speechEngine as speech
 import datetime
+import text_to_speech as speech
 
 
-"""
-In this file, it contains all the functions supports Jarvis to serve the users' needs
-"""
-
-
-def weatherReport(city):
+def weather_report(city):
     api_key = "1ada8f64926d58a8a31c7d92ec230faa7c462347a14269d45ba31d471b6f6aa6"  # Enter the API key you got from the OpenWeatherMap website
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
-    # city_name = input("Enter city name : ")
     city_name = "Wellington"
     complete_url = base_url + "appid=" + 'd850f7f52bf19300a9eb4b0aa6b80f0d' + "&q=" + city_name  # This is to complete the base_url, you can also do this manually to checkout other weather data available
     response = requests.get(complete_url)
@@ -81,9 +74,3 @@ def weatherReport(city):
         speech.speak(detailedWeather)
     else:
         print(" City Not Found ")
-
-
-
-def home_environment_report():
-    return
-
