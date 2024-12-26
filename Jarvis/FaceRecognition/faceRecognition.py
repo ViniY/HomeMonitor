@@ -15,8 +15,10 @@ Locally testing the acc
 """
 
 
-def read_images(path):
+def read_images():
     imgs = []
+    path = os.getcwd() + '/Jarvis/FaceRecognition/faceDetectionDataset'
+    print(path)
     for f in os.listdir(path):
         if "DS_Store" in f:
             continue
@@ -52,21 +54,21 @@ def detect_faces(f_cascade, colored_img, scaleFactor=1.1):
 
 
 if __name__ == '__main__':
-    #%%
-    path = os.getcwd()+ "/faceDetectionDataset"
-    # load cascade classifier training file for haarcascade
+    plt.interactive(False)
 
+    #%%
+    # load cascade classifier training file for haarcascade=
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-    imgs = read_images(path)
+    imgs = read_images()
     imgs_grey = color_grey(imgs)
-    # call our function to detect faces
+    # # call our function to detect faces
+    path = os.getcwd() + '/Jarvis/FaceRecognition/faceDetectionDataset'
     test2 = cv2.imread(path + '/img_161.jpg')
     faces_detected_img = detect_faces(face_cascade, test2)
-    #%% 
-    # convert image to RGB and show image
+    # #%% 
+    # # convert image to RGB and show image
+
     plt.imshow(convertToRGB(faces_detected_img))
-    plt.show()
-
-
+    plt.show(block=True)
 
 # %%

@@ -49,7 +49,7 @@ proto-plus==1.22.1
 protobuf==4.21.7
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-PyAudio==0.2.12
+# PyAudio==0.2.12
 pyparsing==3.0.9
 PyQt5==5.15.7
 PyQt5-Qt5==5.15.2
